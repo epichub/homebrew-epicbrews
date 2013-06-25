@@ -10,7 +10,6 @@ class Cvs < Formula
     { :p0 => DATA}
   end
   def install
-    # build fails if these don't exist
     system "./configure", "--prefix=#{prefix}"
     system "make install"
   end
