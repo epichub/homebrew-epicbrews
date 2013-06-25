@@ -1,6 +1,6 @@
 require 'formula'
 
-class CVS < Formula
+class Cvs < Formula
   homepage 'http://cvs.nongnu.org'
   url 'http://ftp.gnu.org/non-gnu/cvs/source/stable/1.11.17/cvs-1.11.17.tar.bz2'
   sha1 'd64282e744424ec7c5f92b66e78e5a6fded90ff9'
@@ -21,7 +21,9 @@ class CVS < Formula
   end
 end
 
-
+# First patch is because "wrap_clean_fmt_str" has a return without declaring a type (void).
+# second patch is from macports, https://trac.macports.org/browser/trunk/dports/devel/cvs/files/patch-getline?rev=82549 also see https://trac.macports.org/ticket/30785.
+# both patches are needed to make CVS build on OSX with clang.
 __END__
 --- src/wrapper.c.orig	2004-06-09 16:34:55.000000000 +0200
 +++ src/wrapper.c	2013-06-25 13:55:38.000000000 +0200
