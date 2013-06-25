@@ -11,10 +11,8 @@ class Cvs < Formula
   end
   def install
     # build fails if these don't exist
-    cd "src" do
-      system "./configure", "--prefix=#{prefix}"
-      system "make install"
-    end
+    system "./configure", "--prefix=#{prefix}"
+    system "make install"
   end
 end
 
