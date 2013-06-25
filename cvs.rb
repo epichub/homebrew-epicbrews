@@ -7,10 +7,7 @@ class Cvs < Formula
 
   depends_on :automake
   def patches
-#    [
-#     "https://trac.macports.org/export/82549/trunk/dports/devel/cvs/files/patch-getline"
-     DATA
-#    ]
+    { :p0 => DATA}
   end
   def install
     # build fails if these don't exist
